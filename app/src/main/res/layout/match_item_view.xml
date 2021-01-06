@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="match"
+            type="com.example.peopleinteractive.models.Match"/>
+
+        <variable
+            name="clickListener"
+            type="com.example.peopleinteractive.adapter.Listener" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/cardElevation"
+        app:cardCornerRadius="@dimen/cardCornerRadius"
+        android:layout_margin="@dimen/sixteen"
+        app:cardPreventCornerOverlap="false">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/sixteen">
+
+            <ImageView
+                android:id="@+id/img_pic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sixteen"
+                android:layout_marginStart="@dimen/thirty_two"
+                android:layout_marginEnd="@dimen/thirty_two"
+                android:adjustViewBounds="true"
+                app:imageUrl="@{match.imgSrcUrl}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/img_pic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:textSize="@dimen/twenty_four"
+                app:textVisibility="@{match}"
+                app:setText="@{match}"
+                android:textColor="@color/black"
+                android:layout_marginTop="@dimen/sixteen"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <Button
+                android:id="@+id/decline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/decline"
+                app:btnVisibility="@{match}"
+                android:layout_marginTop="@dimen/thirty_two"
+                app:layout_constraintTop_toBottomOf="@+id/img_pic"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                app:layout_constraintEnd_toStartOf="@+id/accept"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <Button
+                android:id="@+id/accept"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/accept"
+                app:btnVisibility="@{match}"
+                android:layout_marginTop="@dimen/thirty_two"
+                app:layout_constraintStart_toEndOf="@+id/decline"
+                app:layout_constraintTop_toBottomOf="@+id/img_pic"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
