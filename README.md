@@ -12,3 +12,7 @@ Assignment Project related to matrimonial profile matching.
 * Moshi
 * Retrofit
 
+## Screenshot
+
+<img src="https://github.com/rohitgurjar058/PeopleInteractive/blob/master/people_interactive.png" alt="alt text" width="250" height="500">
+
