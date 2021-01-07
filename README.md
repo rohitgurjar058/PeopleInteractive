@@ -11,6 +11,7 @@ Assignment Project related to matrimonial profile matching.
 * Clean Architecture
 * Moshi
 * Retrofit
+* Navigation Component
 
 ## Screenshot
 
